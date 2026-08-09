@@ -66,8 +66,8 @@ export const student: Student = {
   "completedDays": 11,
   "missedDays": 1,
   "joinedOn": JOINED_ON,
-  "githubUsername": "aarav-dev",
-  "linkedinHandle": "aarav-dev"
+  "githubUsername": "abtalks-demo-aarav",
+  "linkedinHandle": "abtalks-demo-aarav"
 };
 
 export const days: ChallengeDay[] = [
@@ -85,9 +85,9 @@ export const days: ChallengeDay[] = [
     "estimatedTimeMinutes": 75,
     "status": "submitted",
     "submission": {
-      "githubRepoUrl": "https://github.com/aarav-dev/abtalks-day-1",
-      "githubCommitUrl": "https://github.com/aarav-dev/abtalks-day-1/commit/a1b2c3d",
-      "linkedinPostUrl": "https://linkedin.com/posts/aarav-dev_day1-abtalks-activity",
+      "githubRepoUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-1",
+      "githubCommitUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-1/commit/a1b2c3d",
+      "linkedinPostUrl": "https://linkedin.com/posts/abtalks-demo-aarav_day1-abtalks-activity",
       "liveDeploymentUrl": "",
       "submittedAt": "2026-07-01T22:14:00+05:30"
     }
@@ -106,9 +106,9 @@ export const days: ChallengeDay[] = [
     "estimatedTimeMinutes": 30,
     "status": "submitted",
     "submission": {
-      "githubRepoUrl": "https://github.com/aarav-dev/abtalks-day-2",
-      "githubCommitUrl": "https://github.com/aarav-dev/abtalks-day-2/commit/a1b2c3d",
-      "linkedinPostUrl": "https://linkedin.com/posts/aarav-dev_day2-abtalks-activity",
+      "githubRepoUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-2",
+      "githubCommitUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-2/commit/a1b2c3d",
+      "linkedinPostUrl": "https://linkedin.com/posts/abtalks-demo-aarav_day2-abtalks-activity",
       "liveDeploymentUrl": "",
       "submittedAt": "2026-07-02T22:14:00+05:30"
     }
@@ -127,9 +127,9 @@ export const days: ChallengeDay[] = [
     "estimatedTimeMinutes": 30,
     "status": "submitted",
     "submission": {
-      "githubRepoUrl": "https://github.com/aarav-dev/abtalks-day-3",
-      "githubCommitUrl": "https://github.com/aarav-dev/abtalks-day-3/commit/a1b2c3d",
-      "linkedinPostUrl": "https://linkedin.com/posts/aarav-dev_day3-abtalks-activity",
+      "githubRepoUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-3",
+      "githubCommitUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-3/commit/a1b2c3d",
+      "linkedinPostUrl": "https://linkedin.com/posts/abtalks-demo-aarav_day3-abtalks-activity",
       "liveDeploymentUrl": "https://abtalks-day-3.vercel.app",
       "submittedAt": "2026-07-03T22:14:00+05:30"
     }
@@ -148,9 +148,9 @@ export const days: ChallengeDay[] = [
     "estimatedTimeMinutes": 75,
     "status": "submitted",
     "submission": {
-      "githubRepoUrl": "https://github.com/aarav-dev/abtalks-day-4",
-      "githubCommitUrl": "https://github.com/aarav-dev/abtalks-day-4/commit/a1b2c3d",
-      "linkedinPostUrl": "https://linkedin.com/posts/aarav-dev_day4-abtalks-activity",
+      "githubRepoUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-4",
+      "githubCommitUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-4/commit/a1b2c3d",
+      "linkedinPostUrl": "https://linkedin.com/posts/abtalks-demo-aarav_day4-abtalks-activity",
       "liveDeploymentUrl": "https://abtalks-day-4.vercel.app",
       "submittedAt": "2026-07-04T22:14:00+05:30"
     }
@@ -169,9 +169,9 @@ export const days: ChallengeDay[] = [
     "estimatedTimeMinutes": 45,
     "status": "submitted",
     "submission": {
-      "githubRepoUrl": "https://github.com/aarav-dev/abtalks-day-5",
-      "githubCommitUrl": "https://github.com/aarav-dev/abtalks-day-5/commit/a1b2c3d",
-      "linkedinPostUrl": "https://linkedin.com/posts/aarav-dev_day5-abtalks-activity",
+      "githubRepoUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-5",
+      "githubCommitUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-5/commit/a1b2c3d",
+      "linkedinPostUrl": "https://linkedin.com/posts/abtalks-demo-aarav_day5-abtalks-activity",
       "liveDeploymentUrl": "https://abtalks-day-5.vercel.app",
       "submittedAt": "2026-07-05T22:14:00+05:30"
     }
@@ -190,9 +190,9 @@ export const days: ChallengeDay[] = [
     "estimatedTimeMinutes": 45,
     "status": "submitted",
     "submission": {
-      "githubRepoUrl": "https://github.com/aarav-dev/abtalks-day-6",
-      "githubCommitUrl": "https://github.com/aarav-dev/abtalks-day-6/commit/a1b2c3d",
-      "linkedinPostUrl": "https://linkedin.com/posts/aarav-dev_day6-abtalks-activity",
+      "githubRepoUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-6",
+      "githubCommitUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-6/commit/a1b2c3d",
+      "linkedinPostUrl": "https://linkedin.com/posts/abtalks-demo-aarav_day6-abtalks-activity",
       "liveDeploymentUrl": "https://abtalks-day-6.vercel.app",
       "submittedAt": "2026-07-06T22:14:00+05:30"
     }
@@ -211,9 +211,9 @@ export const days: ChallengeDay[] = [
     "estimatedTimeMinutes": 45,
     "status": "submitted",
     "submission": {
-      "githubRepoUrl": "https://github.com/aarav-dev/abtalks-day-7",
-      "githubCommitUrl": "https://github.com/aarav-dev/abtalks-day-7/commit/a1b2c3d",
-      "linkedinPostUrl": "https://linkedin.com/posts/aarav-dev_day7-abtalks-activity",
+      "githubRepoUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-7",
+      "githubCommitUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-7/commit/a1b2c3d",
+      "linkedinPostUrl": "https://linkedin.com/posts/abtalks-demo-aarav_day7-abtalks-activity",
       "liveDeploymentUrl": "https://abtalks-day-7.vercel.app",
       "submittedAt": "2026-07-07T22:14:00+05:30"
     }
@@ -247,9 +247,9 @@ export const days: ChallengeDay[] = [
     "estimatedTimeMinutes": 75,
     "status": "submitted",
     "submission": {
-      "githubRepoUrl": "https://github.com/aarav-dev/abtalks-day-9",
-      "githubCommitUrl": "https://github.com/aarav-dev/abtalks-day-9/commit/e4f5g6h",
-      "linkedinPostUrl": "https://linkedin.com/posts/aarav-dev_day9-abtalks-activity",
+      "githubRepoUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-9",
+      "githubCommitUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-9/commit/e4f5g6h",
+      "linkedinPostUrl": "https://linkedin.com/posts/abtalks-demo-aarav_day9-abtalks-activity",
       "liveDeploymentUrl": "https://abtalks-day-9.vercel.app",
       "submittedAt": "2026-08-02T21:40:00+05:30"
     }
@@ -268,9 +268,9 @@ export const days: ChallengeDay[] = [
     "estimatedTimeMinutes": 30,
     "status": "submitted",
     "submission": {
-      "githubRepoUrl": "https://github.com/aarav-dev/abtalks-day-10",
-      "githubCommitUrl": "https://github.com/aarav-dev/abtalks-day-10/commit/e4f5g6h",
-      "linkedinPostUrl": "https://linkedin.com/posts/aarav-dev_day10-abtalks-activity",
+      "githubRepoUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-10",
+      "githubCommitUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-10/commit/e4f5g6h",
+      "linkedinPostUrl": "https://linkedin.com/posts/abtalks-demo-aarav_day10-abtalks-activity",
       "liveDeploymentUrl": "https://abtalks-day-10.vercel.app",
       "submittedAt": "2026-08-03T21:40:00+05:30"
     }
@@ -289,9 +289,9 @@ export const days: ChallengeDay[] = [
     "estimatedTimeMinutes": 75,
     "status": "submitted",
     "submission": {
-      "githubRepoUrl": "https://github.com/aarav-dev/abtalks-day-11",
-      "githubCommitUrl": "https://github.com/aarav-dev/abtalks-day-11/commit/e4f5g6h",
-      "linkedinPostUrl": "https://linkedin.com/posts/aarav-dev_day11-abtalks-activity",
+      "githubRepoUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-11",
+      "githubCommitUrl": "https://github.com/abtalks-demo-aarav/abtalks-day-11/commit/e4f5g6h",
+      "linkedinPostUrl": "https://linkedin.com/posts/abtalks-demo-aarav_day11-abtalks-activity",
       "liveDeploymentUrl": "https://abtalks-day-11.vercel.app",
       "submittedAt": "2026-08-04T21:40:00+05:30"
     }
