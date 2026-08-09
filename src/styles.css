@@ -1,0 +1,527 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-momentum: var(--momentum);
+  --color-momentum-foreground: var(--momentum-foreground);
+  --color-warn: var(--warn);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+
+  /* deep navy base */
+  --background: oklch(0.18 0.035 264);
+  --foreground: oklch(0.97 0.008 250);
+
+  --surface: oklch(0.235 0.035 264);
+  --surface-2: oklch(0.28 0.036 264);
+
+  --card: oklch(0.235 0.035 264);
+  --card-foreground: oklch(0.97 0.008 250);
+  --popover: oklch(0.22 0.035 264);
+  --popover-foreground: oklch(0.97 0.008 250);
+
+  /* electric blue - interactive */
+  --primary: oklch(0.68 0.17 259);
+  --primary-foreground: oklch(0.16 0.04 264);
+
+  /* electric green - progress / success */
+  --momentum: oklch(0.83 0.19 155);
+  --momentum-foreground: oklch(0.19 0.05 160);
+
+  --secondary: oklch(0.3 0.035 264);
+  --secondary-foreground: oklch(0.96 0.01 250);
+  --muted: oklch(0.28 0.03 264);
+  --muted-foreground: oklch(0.72 0.025 258);
+  --accent: oklch(0.32 0.05 264);
+  --accent-foreground: oklch(0.97 0.008 250);
+
+  --warn: oklch(0.82 0.16 78);
+  --destructive: oklch(0.66 0.2 20);
+  --destructive-foreground: oklch(0.98 0.005 250);
+
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.68 0.17 259);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+}
+
+/* Layered navy gradient + fine grain noise, never flat black */
+@utility app-canvas {
+  position: relative;
+  background:
+    radial-gradient(
+      120% 80% at 12% -10%,
+      color-mix(in oklab, var(--primary) 20%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      100% 70% at 100% 0%,
+      color-mix(in oklab, var(--momentum) 12%, transparent) 0%,
+      transparent 55%
+    ),
+    linear-gradient(180deg, oklch(0.21 0.04 264) 0%, oklch(0.165 0.032 264) 55%, oklch(0.15 0.03 264) 100%);
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+  }
+}
+
+@utility grid-lines {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--primary) 9%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--primary) 9%, transparent) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(80% 60% at 50% 0%, #000 0%, transparent 75%);
+}
+
+@utility panel {
+  border-radius: var(--radius-2xl);
+  background:
+    linear-gradient(180deg, oklch(1 0 0 / 6%) 0%, oklch(1 0 0 / 2%) 100%),
+    var(--surface);
+  border: 1px solid oklch(1 0 0 / 9%);
+  box-shadow:
+    0 1px 0 0 oklch(1 0 0 / 6%) inset,
+    0 18px 40px -24px oklch(0.05 0.03 264 / 90%);
+}
+
+@utility panel-glass {
+  border-radius: var(--radius-2xl);
+  background: oklch(0.23 0.035 264 / 72%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid oklch(1 0 0 / 12%);
+  box-shadow: 0 20px 50px -20px oklch(0.05 0.03 264 / 95%);
+}
+
+@utility glow-momentum {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--momentum) 30%, transparent),
+    0 0 24px -4px color-mix(in oklab, var(--momentum) 55%, transparent);
+}
+
+@utility mono-label {
+  font-family: ui-monospace, "SFMono-Regular", "Menlo", monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@keyframes momentum-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(6px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spark {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.6);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-26px) scale(1);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-momentum-pulse {
+  animation: momentum-pulse 2.4s ease-in-out infinite;
+}
+@utility animate-pop-in {
+  animation: pop-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@utility animate-spark {
+  animation: spark 0.9s ease-out both;
+}
+@utility animate-rise-in {
+  animation: rise-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Signature "pulse-ring" — the app's active/selected circle language.  */
+/* A detached halo ring sits just outside the shape and breathes.       */
+/* ------------------------------------------------------------------ */
+
+@keyframes halo-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.16);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.16);
+    opacity: 0;
+  }
+}
+
+@keyframes halo-hold {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Applies to any circular element that is active / in-progress. */
+@utility pulse-ring {
+  position: relative;
+  isolation: isolate;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 9999px;
+    pointer-events: none;
+  }
+
+  /* steady halo */
+  &::before {
+    border: 1.5px solid color-mix(in oklab, var(--momentum) 85%, transparent);
+    animation: halo-hold 2.8s ease-in-out infinite;
+  }
+
+  /* travelling pulse */
+  &::after {
+    border: 1.5px solid color-mix(in oklab, var(--primary) 80%, transparent);
+    animation: halo-pulse 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+}
+
+@utility pulse-ring-lg {
+  &::before,
+  &::after {
+    inset: -9px;
+  }
+}
+
+/* Quiet counterpart for inactive circles of the same family. */
+@utility circle-quiet {
+  opacity: 0.62;
+  filter: saturate(0.5);
+}
+
+/* Snappy highlight for ANY circular element the cursor/touch lands on —
+   distinct from the slow ambient pulse-ring above. This is a fast,
+   tactile response to contact, not a state indicator. */
+@utility circle-touch {
+  transition:
+    transform 160ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 160ms ease,
+    box-shadow 160ms ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.08);
+    filter: saturate(1.3) brightness(1.1);
+    box-shadow:
+      0 0 0 1.5px color-mix(in oklab, var(--primary) 60%, transparent),
+      0 0 20px -4px var(--primary);
+  }
+
+  &:active {
+    transform: scale(0.94);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Scroll reveal — each homepage section gets its own entrance language */
+/* instead of one repeated fade. Triggered once via IntersectionObserver.*/
+/* ------------------------------------------------------------------ */
+
+@utility reveal-rise {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility reveal-slide-left {
+  opacity: 0;
+  transform: translateX(-38px);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@utility reveal-slide-right {
+  opacity: 0;
+  transform: translateX(38px);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* "Assemble" — content resolves from a soft, scaled-down blur, echoing
+   the transmission/math motif rather than a plain slide or fade. */
+@utility reveal-assemble {
+  opacity: 0;
+  transform: scale(0.94);
+  filter: blur(6px);
+  transition:
+    opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 750ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 750ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.is-visible {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Transmission overlay                                                 */
+/* ------------------------------------------------------------------ */
+
+@keyframes transmission-fade {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rocket-launch {
+  0% {
+    transform: translateY(18px) scale(0.94);
+    opacity: 0;
+  }
+  14% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(4px) scale(1);
+  }
+  100% {
+    transform: translateY(-135vh) scale(0.72);
+    opacity: 1;
+  }
+}
+
+/* Distinct "homecoming" variant — plays instead of the launch when the
+   destination is Home. The rocket descends and settles rather than
+   blasting off, so returning home reads differently from moving deeper
+   into the app. */
+@keyframes rocket-land {
+  0% {
+    transform: translateY(-120vh) scale(0.7);
+    opacity: 0;
+  }
+  55% {
+    transform: translateY(10px) scale(1.02);
+    opacity: 1;
+  }
+  72% {
+    transform: translateY(-6px) scale(1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes homecoming-label {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  60%,
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes concept-eject {
+  0% {
+    transform: translate(0, 0) scale(0.4);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    transform: translate(calc(var(--dx) * 0.35), 26px) scale(1);
+  }
+  100% {
+    transform: translate(var(--dx), 190px) scale(0.7);
+    opacity: 0;
+  }
+}
+
+@keyframes flame-flicker {
+  0%,
+  100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scaleY(1.25) scaleX(0.88);
+    opacity: 0.7;
+  }
+}
+
+@utility animate-transmission-fade {
+  animation: transmission-fade 1350ms ease-in-out both;
+}
+@utility animate-rocket-launch {
+  animation: rocket-launch 1250ms cubic-bezier(0.5, 0, 0.65, 0.2) both;
+}
+@utility animate-rocket-land {
+  animation: rocket-land 1250ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@utility animate-homecoming-label {
+  animation: homecoming-label 1350ms ease-in-out both;
+}
+@utility animate-concept-eject {
+  animation: concept-eject 780ms cubic-bezier(0.3, 0.8, 0.4, 1) both;
+}
+@utility animate-flame-flicker {
+  animation: flame-flicker 140ms ease-in-out infinite;
+}
